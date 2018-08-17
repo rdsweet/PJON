@@ -30,10 +30,10 @@ Can be read through a getter:
 ```
 
 ### Dynamic Addressing
-`PJONMaster` and `PJONSlave` classes implement the master-slave and multi-master [dynamic addressing](/specification/PJON-dynamic-addressing-specification-v2.0.md) features. Slaves can be connected to a bus and can be hot-swapped, their id is automatically assigned by master and their presence can be optionally monitored. Master keeps an updated list of known dynamically addressed slaves. Use the `PJON` class if those features are not required.   
+`PJONMaster` and `PJONSlave` classes implement the master-slave and multi-master [dynamic addressing](/specification/PJON-dynamic-addressing-specification-v2.0.md) features. Slaves can be connected to a bus and can be hot-swapped, their id is automatically assigned by master and their presence can be optionally monitored. Master keeps an updated list of known dynamically addressed slaves. Use the `PJON` class if those features are not required. ( I think you should modify the word slave and master always with PJON. If there could have been another common convention for slave and master like sub and dom - I would use it.)
 
 #### PJONMaster
-The `PJONMaster` class implement master's dynamic addressing procedure which is totally automatic a requires no configuration, although some optional configuration is available.
+The `PJONMaster` class implement master's dynamic addressing procedure which is totally automatic a (and) requires no configuration, although some optional configuration is available.
 ```cpp
 // Optionally configurable maximum amount of slaves handled by master
 #define PJON_MAX_DEVICES 50
@@ -48,7 +48,7 @@ If addressing procedure debug is needed set the state of `bus.debug` accordingly
 ```cpp
 bus.debug = true;
 ```
-Slave presence check can be requested manually calling `check_slaves_presence`. This is a bandwidth consuming procedure because master contacts each known slave to determine if still online. If a slave is found unresponsive it is removed from the master list of known slaves. The more devices are connected the more bandwidth is consumed. Call this function seldom (every 5-10 seconds) to avoid bandwidth saturation.
+Slave presence check (<-- make plural "checks") can be requested manually (<-- add "by") calling `check_slaves_presence`. This is a bandwidth consuming procedure because master contacts each known slave to determine if still online. If a slave is found unresponsive it is removed from the master list of known slaves. The more devices (add "that) are connected the more bandwidth is consumed. Call this function seldom (*** there is no seldom example below. What do you mean by this?***) (every 5-10 seconds) to avoid bandwidth saturation.
 ```cpp
 // Check if registered slaves are still present on the bus
 bus.check_slaves_presence();
