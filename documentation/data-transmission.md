@@ -62,7 +62,7 @@ if(bus.send_packet(10, bus_id, "All is ok?!", 11) == PJON_ACK)
   Serial.println("10 is ok!");
 ```
 
-Use `send_packet_blocking` if it is necessary to try more than once and so comply with the specified back-off.
+Use `send_packet_blocking` if it is necessary to try more than once and (what are you saying -->) so comply with the specified back-off.
 ```cpp
 // Send to device id 10 the string "Hi!"
 bus.send_packet_blocking(10, "Hi!", 3);
