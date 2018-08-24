@@ -26,10 +26,10 @@ Its sampling method is based on two different samples:
 
 Reflex intensity or `R` is estimated simply subtracting the background noise sample to the active one `(R = E - B)`.
 
-The internal 1.1v analog reference and analog readings integration are used to higher reflex detection resolution.
+The internal 1.1v analog reference and analog readings integration are used to higher (<-- change to "increase") reflex detection resolution.
 
 #### Configuration
-A standard program is proposed to let users easily configure LEDARs using only a series of commands on its PJON [SoftwareBitBang](/src/strategies/SoftwareBitBang/README.md) bus, and automatically save its result in the EPROM to avoid the tedious need of flashing the chip multiple times. LEDAR accepts incoming configuration if sent by `MASTER_ID` and its configured recipient id.
+A standard program is proposed to let (<-- change to "allow") users easily configure LEDARs using only a series of commands on its PJON [SoftwareBitBang](/src/strategies/SoftwareBitBang/README.md) bus, and automatically save its result in the EPROM to avoid the tedious need of flashing the chip multiple times. LEDAR accepts incoming configuration if sent by `MASTER_ID` and its configured recipient id.
 
 | Command                         | Parameter     | Effect                        |
 | --------------------------------| --------------| ------------------------------|
@@ -46,7 +46,7 @@ A standard program is proposed to let users easily configure LEDARs using only a
 
 - `M` Detection mode can be set to `0` (passive mode), where only presence detection is transmitted if threshold is reached or `1` (active mode) where the sensor cyclically transmits data depending on transmission interval configuration or `T`
 - `D` Threshold can be set when in passive mode or `M0` to activate a sending only if a certain value is reached
-- `L` Reading iteration count affects reading resolution and duration, setting a higher amount of readings will higher reading duration as well as resolution. Consider that for now LEDAR supports an output of up to 65535, transmitting data in a 2 bytes fixed format. Dynamic data length related to data magnitude will be added in the next software versions
+- `L` Reading iteration count affects reading resolution and duration, setting a higher amount of readings will higher (<-- change to "increase") reading duration as well as resolution. Consider that for now LEDAR supports an output of up to 65535, transmitting data in a 2 bytes (<-- change to "byte") fixed format. Dynamic data length related to data magnitude will be added in the next software versions
 - `Q` For security reasons it is possible to block incoming configuration, although further configuration is possible flashing the [LEDAR](software/LEDAR/LEDAR.ino) sketch on the ATtiny85 using an ISP programmer.
 
 Using the proposed [Console](software/Console/Console.ino) example and an Arduino compatible device it is possible to input configuration with an easy to use console interface.
@@ -67,7 +67,7 @@ The circuit is quite simple and can be tested quickly on a breadboard. It is com
 
 ![PJON](images/LEDAR-PCB.jpg)
 
-This is its dedicated printed circuit board produced by the [Fritzing FAB](https://go.aisler.net/fritzing) and a 3d printed case, used to higher sensitivity and avoid direct line of sight between the emitter and the sensor.
+This is its dedicated printed circuit board produced by the [Fritzing FAB](https://go.aisler.net/fritzing) and a 3d printed case, used to higher (<-- change to "increase") sensitivity and avoid direct line of sight between the emitter and the sensor.
 
 ![PJON](images/LEDAR-front.jpg)
 
