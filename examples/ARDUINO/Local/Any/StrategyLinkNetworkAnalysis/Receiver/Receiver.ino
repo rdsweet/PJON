@@ -1,8 +1,8 @@
 #include <PJON.h>
 
-/* Defining strategies using StrategyLink template class it is possible to
-   leverage of virtual inheritance to handle PJON instances dynamically, for
-   example keeping an array of PJON instances using different strategies. */
+/* Defining strategies using StrategyLink template class allows you to
+   leverage virtual inheritance to handle PJON instances dynamically. For
+   example, keeping an array of PJON instances using different strategies. */
 
 StrategyLink<SoftwareBitBang> link;
 
