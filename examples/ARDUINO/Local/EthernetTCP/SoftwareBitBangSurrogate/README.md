@@ -2,15 +2,15 @@
 # Surrogate and RemoteWorker concept
 Instead of having a worker device connected directly to a PJON `SoftwareBitBang` bus, this concept allows for it to run
 somewhere else, connected via Ethernet to a surrogate on the bus. The `RemoteWorker` acts as if it was on the actual
-`SoftwareBitBang` bus, while actually using a `EthernetTCP` bus in a special mode. It can send packets to specific device ids,
+`SoftwareBitBang` bus, while using an `EthernetTCP` bus in a special mode. It can send packets to specific device IDs,
 and will receive packets that are sent to its device id.
 
 The Surrogate runs on for example an Arduino Uno or Nano with an Ethernet card.
 The `RemoteWorker` can do the same, just being located in another physical location connected through a network.
-But things get more interesting when running the `RemoteWorker` on hardware not capable of using `SoftwareBitBang`,
-enabling for example a Raspberry PI to communicate in a `SoftwareBitBang` bus through a `Surrogate`.
+But things get more interesting when running the `RemoteWorker` on hardware not capable of using `SoftwareBitBang`.
+Enabling for example a Raspberry PI to communicate in a `SoftwareBitBang` bus through a `Surrogate`.
 
-Also, the `RemoteWorker` can run on a computer, allowing a lot of possibilities, for example a personal computer running whatever operative system to be part of a `SoftwareBitBang` bus.
+Also, the `RemoteWorker` can run on a computer, allowing a lot of possibilities. For example, a personal computer can run any operating system to be part of a `SoftwareBitBang` bus.
 
 ## The Surrogate device
 The surrogate has the same bus id on the `SoftwareBitBang` bus as the `RemoteWorker` has on the `EthernetTCP` bus (which is private between the `Surrogate` and `RemoteWorker` devices). It forwards packets to that id on the `SoftwareBitBang` bus to the `RemoteWorker`, and forwards all packets from the `RemoteWorker` to devices connected to the `SoftwareBitBang` bus. The surrogate is not a switch or a general purpose routing device, but is a custom class engineered to transparently connect to `SoftwareBitBang` bus a device connected using `EthernetTCP`. The difference between a Surrogate and a Switch or Router is that the Surrogate does not pick up and forward any packets to other devices than the RemoteWorker which it represents.
