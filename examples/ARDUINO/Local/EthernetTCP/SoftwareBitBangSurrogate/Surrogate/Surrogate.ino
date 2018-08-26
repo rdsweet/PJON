@@ -1,9 +1,9 @@
-/* This sketch lets a RemoteWorker device connected through Ethernet TCP act
+/* This sketch allows a RemoteWorker device connected through Ethernet TCP to act
    as if it is present on the SoftwareBitBang bus connected to this Surrogate
    device.
 
-   The RemoteWorker sketch can the run on a device not capable of SWBB but
-   with Ethernet support, like a PC or a Raspberry PI.
+   The RemoteWorker sketch can (**** did you need the "the" which I think you meant "then") run on a device not capable of SWBB but
+   with Ethernet support, such as a PC or a Raspberry PI.
 
  Surrogate and RemoteWorker examples contributed by Fred Larsen. */
 
@@ -90,7 +90,7 @@ void loop() {
   busA.update();
 
   // Show the number of sockets created after startup
-  // (Try disconnecting the Ethernet cable for a while to see it increase when reconnected.)
+  // (Try disconnecting the Ethernet cable for a while to see if it increases when reconnected.)
   static uint32_t last = millis();
   if (millis() - last > 5000) {
     last = millis();
