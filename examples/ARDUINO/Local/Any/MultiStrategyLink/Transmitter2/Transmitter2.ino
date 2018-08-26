@@ -4,10 +4,10 @@
 // Uncomment to run SoftwareBitBang in MODE 3
 // #define SWBB_MODE 3
 
-/*  Acknowledge Latency maximum duration (1000 microseconds default).
-    Can be necessary to higher SWBB_RESPONSE_TIMEOUT to leave enough time to
+/*  Acknowledge maximum latency duration (1000 microseconds default).
+    Can be necessary to increase SWBB_RESPONSE_TIMEOUT to leave enough time for
     receiver to compute the CRC and to respond with a synchronous acknowledgement
-    SWBB_RESPONSE_TIMEOUT can be reduced to higher communication speed if
+    SWBB_RESPONSE_TIMEOUT can be reduced to increase communication speed if
     devices are near and able to compute CRC fast enough. */
 
 //#define SWBB_RESPONSE_TIMEOUT 1000
