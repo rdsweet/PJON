@@ -1,7 +1,7 @@
 #include <PJON.h>
 
 /* Defining strategies using StrategyLink template class it is possible to
-   leverage of virtual inheritance to handle PJON instances dynamically, for
+   leverage virtual inheritance to handle PJON instances dynamically, for
    example keeping an array of PJON instances using different strategies. */
 
 StrategyLink<SoftwareBitBang> link1;
@@ -35,7 +35,7 @@ void setup() {
 };
 
 void receiver_function(uint8_t *payload, uint16_t length, const PJON_Packet_Info &packet_info) {
-  /* Make use of the payload before sending something, the buffer where payload points to is
+  /* Make use of the payload before sending something, the buffer where the payload points to is
      overwritten when a new message is dispatched */
   if(payload[0] == 'B') {
     Serial.print("BLINK FROM BUS ");
