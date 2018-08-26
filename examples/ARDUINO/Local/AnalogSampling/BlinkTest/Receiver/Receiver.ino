@@ -48,3 +48,4 @@ void loop() {
   Serial.print((1.1 / (1023.0 / bus.strategy.threshold)) * 1000); // Convert threshold in mV
   Serial.println(" mV");
 };
+no change
