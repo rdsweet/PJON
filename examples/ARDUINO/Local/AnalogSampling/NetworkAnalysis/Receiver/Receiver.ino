@@ -1,10 +1,10 @@
 
-/* Use a couple of visible light / IR / UV LEDs as wireless bidirectional transceivers
+/* Use a couple of visible light(s)<-- add an s. And couple means 2. Do you mean 2 or do you mean more? / IR / UV LEDs as wireless bidirectional transceivers
    Connect LED + to A0
    Connect LED - to GND
    Place a 100KΩ-5MΩ pull down resistor between A0 and GND
-   Try different resistor values to find the optimal to maximize range
-   Higher resistance can higher the range but can also higher background noise.  */
+   Try different resistor values to find the optimal to maximize range 
+   Higher resistance can increase the range but can also increase background noise.  */
 
 #include <PJON.h>
 
