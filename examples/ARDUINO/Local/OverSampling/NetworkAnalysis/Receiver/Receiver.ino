@@ -4,7 +4,7 @@
 PJON<OverSampling> bus(44);
 
 void setup() {
-  /* When using more than one pin always use pins connected to
+  /* When using more than one pin, always use pins connected to
      a different port group to avoid cross-talk. */
   bus.strategy.set_pins(7, 12);
 
