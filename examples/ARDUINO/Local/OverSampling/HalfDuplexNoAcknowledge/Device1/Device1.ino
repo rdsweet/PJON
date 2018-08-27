@@ -9,7 +9,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW); // Initialize LED 13 to be off
 
-  /* When using more than one pin always use pins connected to
+  /* When using more than one pin, always use pins connected to
      a different port group to avoid cross-talk. */
   bus.strategy.set_pins(7, 12);
 
@@ -21,7 +21,7 @@ void setup() {
 };
 
 void receiver_function(uint8_t *payload, uint16_t length, const PJON_Packet_Info &packet_info) {
-  /* Make use of the payload before sending something, the buffer where payload points to is
+  /* Make use of the payload before sending something. The buffer where the payload points to is
      overwritten when a new message is dispatched */
   if((char)payload[0] == 'B') {
     digitalWrite(LED_BUILTIN, HIGH);
